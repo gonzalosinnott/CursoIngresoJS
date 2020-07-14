@@ -1,6 +1,12 @@
+/* Al ingresar una edad solo debemos
+informar si la persona NO es adolescente. */
+
+// id: txtIdEdad
+
 function mostrar()
 {
-	//tomo la edad  
-	alert("ok");
-
-}//FIN DE LA FUNCIÓN
+	if (txtIdEdad.value < 13 || txtIdEdad.value > 17)
+	{
+		alert("No es Adolescente.");
+	}
+}

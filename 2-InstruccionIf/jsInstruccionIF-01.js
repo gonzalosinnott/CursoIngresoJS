@@ -1,6 +1,12 @@
+/*Al ingresar una edad que sea igual a 15,
+ mostrar el mensaje "niña bonita". */
+
+// id: txtIdEdad 
+
 function mostrar()
 {
-	//tomo la edad  
-	alert("ok");
-
-}//FIN DE LA FUNCIÓN
+	if (txtIdEdad.value == 15)
+	{
+		alert('"niña bonita".');
+	}
+}
