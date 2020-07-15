@@ -20,8 +20,8 @@ function Rectangulo ()
     ancho = txtIdAncho.value;
     cantidadHilos = 3
 
-    largo = parseInt(txtIdLargo.value);
-    ancho = parseInt(txtIdAncho.value);
+    largo = parseInt(largo);
+    ancho = parseInt(ancho);
     cantidadAlambre = (largo*2 + ancho*2) * cantidadHilos;
 
     alert(cantidadAlambre)
@@ -34,7 +34,8 @@ function Circulo ()
     var cantidadAlambre;
     
     radio = txtIdRadio.value;
-    radio = parseInt(txtIdRadio.value);
+    radio = parseInt(radio);
+
     circunferencia = 2 * Math.PI * radio; 
     cantidadHilos = 3
 
@@ -51,8 +52,9 @@ function Materiales ()
     
     largo = txtIdLargo.value;   
     ancho = txtIdAncho.value;
-    largo = parseInt(txtIdLargo.value);
-    ancho = parseInt(txtIdAncho.value);
+
+    largo = parseInt(largo;
+    ancho = parseInt(ancho);
     
     area = largo * ancho
     cantidadCemento = area *2;
