@@ -1,18 +1,26 @@
 /* Debemos lograr tomar Los numeros por 
-ID , transformarlos a enteros (parseInt) y 
-Sumarlos. Mostrar el resulto por medio de
+ID.value , transformarlos a enteros
+(parseInt) y Sumarlos.
+Mostrar el resulto por medio de
 "ALERT" ej.: "la suma es 750"*/
+
+//id:
+//txtIdNumeroUno
+//txtIdNumeroDos
 
 function sumar()
 {
-	var num1;
-	var num2;
+	var numeroUno;
+	var numeroDos;
 	var suma;
 
-	num1 = txtIdNumeroUno.value;
-	num2 = txtIdNumeroDos.value;
+	numeroUno = txtIdNumeroUno.value;
+	numeroDos = txtIdNumeroDos.value;
 
-	suma = parseInt(num1) + parseInt(num2);
+	numeroUno = parseInt(numeroUno);
+	numeroDos = parseInt(numeroDos);
+	
+	suma = numeroUno + numeroDos;
 
 	alert("La suma es " + suma);
 }

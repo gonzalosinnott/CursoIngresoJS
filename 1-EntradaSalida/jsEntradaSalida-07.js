@@ -10,56 +10,68 @@ ej.: "la Resta es 750"*/
 
 function sumar()
 {	
-	var num1;
-	var num2;
+	var numeroUno;
+	var numeroDos;
 	var suma;
 
-	num1 = txtIdNumeroUno.value;
-	num2 = txtIdNumeroDos.value;
+	numeroUno = txtIdNumeroUno.value;
+	numeroDos = txtIdNumeroDos.value;
 
-	suma = parseInt(num1) + parseInt(num2);
+	numeroUno = parseInt(numeroUno);
+	numeroDos = parseInt(numeroDos);
+
+	suma = numeroUno + numeroDos;
 
 	alert("La suma es " + suma);	
 }
 
 function restar()
 {
-	var num1;
-	var num2;
+	var numeroUno;
+	var numeroDos;
 	var resta;
 
-	num1 = txtIdNumeroUno.value;
-	num2 = txtIdNumeroDos.value;
+	numeroUno = txtIdNumeroUno.value;
+	numeroDos = txtIdNumeroDos.value;
 
-	resta = parseInt(num1) - parseInt(num2);
+	numeroUno = parseInt(numeroUno);
+	numeroDos = parseInt(numeroDos);
+
+	resta = numeroUno - numeroDos;
 
 	alert("La resta es " + resta);		
 }
 
 function multiplicar()
 { 
-	var num1;
-	var num2;
+	var numeroUno;
+	var numeroDos;
 	var producto;
 
-	num1 = txtIdNumeroUno.value;
-	num2 = txtIdNumeroDos.value;
+	numeroUno = txtIdNumeroUno.value;
+	numeroDos = txtIdNumeroDos.value;
 
-	producto = parseInt(num1) * parseInt(num2);
+	numeroUno = parseInt(numeroUno);
+	numeroDos = parseInt(numeroDos);
+
+	producto = numeroUno * numeroDos;
 
 	alert("El producto es " + producto);		
 }
 
 function dividir()
 {
-	var num1;
-	var num2;
+	var numeroUno;
+	var numeroDos
 	var cociente;
 
-	num1 = txtIdNumeroUno.value;
-	num2 = txtIdNumeroDos.value;
+	numeroUno = txtIdNumeroUno.value;
+	numeroDos = txtIdNumeroDos.value;
 
-	cociente = parseInt(num1) / parseInt(num2);
+	numeroUno = parseFloat(numeroUno);
+	numeroDos = parseFloat(numeroDos);
+
+	cociente = numeroUno / numeroDos;
 
 	alert("El cociente es " + cociente);		
 }

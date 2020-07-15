@@ -13,10 +13,10 @@ function mostrarAumento()
 	var sueldo;
 	var aumento;
 
-	sueldo = parseInt(txtIdSueldo.value);
-	aumento = sueldo * 1.1; 
-	// Opción 2 aumento = 10 * sueldo / 100
-	 
-	txtIdResultado.value = aumento; 
-	// Opción 2 txtIdResultado.value = sueldo + aumento;
+	sueldo = txtIdSueldo.value
+	parseInt(sueldo);
+	aumento = sueldo * 0.1; 
+	
+	alert("Aumento del " + aumento + " %");
+    txtIdResultado.value = sueldo + aumento; 
 }
