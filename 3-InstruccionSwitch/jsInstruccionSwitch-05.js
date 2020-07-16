@@ -1,11 +1,14 @@
+/*Al ingresar una hora, informar:
+si está entre las 7 y las 11 : "Es de mañana.".
+*/
+
 function mostrar()
 {
-	//tomo la hora
-	var horaDelDia =txtIdHora.value;
-	alert(horaDelDia);
-	
-	
+	var horaDelDia = txtIdHora.value;
+	horaDelDia = parseInt(horaDelDia);
 
-
-
-}//FIN DE LA FUNCIÓN
+	if (horaDelDia > 6 && horaDelDia < 12)
+	{
+		alert ("Es de mañana");
+	}
+}
