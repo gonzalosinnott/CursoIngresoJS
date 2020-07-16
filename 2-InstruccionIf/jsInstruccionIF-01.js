@@ -5,8 +5,12 @@
 
 function mostrar()
 {
-	if (txtIdEdad.value == 15)
+	var edad;
+	edad = txtIdEdad.value;
+	edad = parseInt(edad);
+
+	if (edad == 15)
 	{
-		alert('"niña bonita".');
+		alert("niña bonita.");
 	}
 }

@@ -6,12 +6,13 @@ B.	Al ingresar una temperatura en Centígrados debemos mostrar la temperatura en
 */
 
 //txtIdTemperatura
+
 function FahrenheitCentigrados () //(°F − 32) × 5/9 = °C
 {
     var temperatura;
 
     temperatura = txtIdTemperatura.value;
-    temperatura = parseInt(temperatura);
+    temperatura = parseInt(temperatura                                                                                                                                                                                      );
     
     conversion = ((temperatura - 32) * (5/9));
 

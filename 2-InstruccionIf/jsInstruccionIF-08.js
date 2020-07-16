@@ -11,10 +11,18 @@ siguiente mensaje:
 
 function mostrar()
 {
-	if (txtIdEdad.value < 18 && estadoCivil.value != "Soltero")
+	var edad;
+	var estado;
+
+	edad = txtIdEdad.value;
+	edad = parseInt(edad);
+
+	estado = estadoCivil.value;
+
+	if (edad < 18 && estado != "Soltero")
 	{
 	}
-	else if (txtIdEdad.value >= 18 && estadoCivil.value == "Soltero")
+	else if (edad > 17 && estado == "Soltero")
 	{
 		alert("'Es soltero y no es menor.'");
 	}

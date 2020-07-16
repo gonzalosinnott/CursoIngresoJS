@@ -5,7 +5,11 @@
 
 function mostrar()
 {
-	if (txtIdEdad.value >= 18)
+	var edad;
+	edad = txtIdEdad.value;
+	edad = parseInt(edad);
+
+	if (edad > 17)
 	{
 		alert("Mayor de edad.");
 	}

@@ -5,7 +5,11 @@ informar si la persona NO es adolescente. */
 
 function mostrar()
 {
-	if (txtIdEdad.value < 13 || txtIdEdad.value > 17)
+	var edad;
+	edad = txtIdEdad.value;
+	edad = parseInt(edad);
+
+	if (edad < 13 || edad > 17)
 	{
 		alert("No es Adolescente.");
 	}

@@ -22,7 +22,8 @@ function Rectangulo ()
 
     largo = parseInt(largo);
     ancho = parseInt(ancho);
-    cantidadAlambre = (largo*2 + ancho*2) * cantidadHilos;
+    
+    cantidadAlambre = (largo+ ancho)*2 * cantidadHilos;
 
     alert(cantidadAlambre)
 }
@@ -53,7 +54,7 @@ function Materiales ()
     largo = txtIdLargo.value;   
     ancho = txtIdAncho.value;
 
-    largo = parseInt(largo;
+    largo = parseInt(largo);
     ancho = parseInt(ancho);
     
     area = largo * ancho

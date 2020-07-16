@@ -6,7 +6,11 @@ si la persona es adolescente, edad entre
 
 function mostrar()
 {
-	if (txtIdEdad.value >= 13 && txtIdEdad.value <= 17)
+	var edad;
+	edad = txtIdEdad.value;
+	edad = parseInt(edad);
+
+	if (edad > 12 && edad < 18)
 	{
 		alert("Adolescente.");
 	}

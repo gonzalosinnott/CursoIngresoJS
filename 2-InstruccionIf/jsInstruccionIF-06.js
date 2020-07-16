@@ -7,15 +7,19 @@ o niño (menor a 13 años). */
 
 function mostrar()
 {
-	if (txtIdEdad.value >= 18)
+	var edad;
+	edad = txtIdEdad.value;
+	edad = parseInt(edad);
+
+	if (edad > 17)
 	{
 		alert("Mayor de edad.");
 	}
-	else if (txtIdEdad.value >= 13 && txtIdEdad.value <= 17)
+	else if (edad > 12 && edad < 18)
 	{
 		alert("Adolescente.");
 	}
-	else if (txtIdEdad.value < 13)
+	else if (edad < 13)
 	{
 		alert("Niño.");
 	}
