@@ -17,12 +17,15 @@ function mostrar()
 	{
 		alert(aleatorio +": EXCELENTE");
 	}
-	else if (aleatorio >=4 && aleatorio <=8)
+	else 
 	{
-		alert(aleatorio + ": APROBO");
-	}
-	else
-	{
+		if (aleatorio >=4 && aleatorio <=8)
+		{
+			alert(aleatorio + ": APROBO");
+		}
+		else
+		{	
 		alert(aleatorio + ": Vamos, la proxima se puede");
+		}
 	}
 }
