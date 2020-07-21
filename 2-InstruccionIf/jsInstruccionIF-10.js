@@ -13,13 +13,13 @@ function mostrar()
 	
 	//Asignar condiciones
 
-	if(aleatorio >= 9)
+	if(aleatorio > 8)
 	{
-		alert(aleatorio +": EXCELENTE");
+		alert(aleatorio + ": EXCELENTE");
 	}
 	else 
 	{
-		if (aleatorio >=4 && aleatorio <=8)
+		if (aleatorio > 3)
 		{
 			alert(aleatorio + ": APROBO");
 		}
