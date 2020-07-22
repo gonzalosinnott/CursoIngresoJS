@@ -8,24 +8,24 @@ para notas menores a 4 */
 function mostrar()
 {
 	//Generar numero random
-	var aleatorio;
-	aleatorio = Math.round(Math.random()*(10 - 1) + 1);
+	var nota;
+	nota = Math.round(Math.random()*(10 - 1) + 1);
 	
 	//Asignar condiciones
 
-	if(aleatorio > 8)
+	if(nota > 8)
 	{
-		alert(aleatorio + ": EXCELENTE");
+		alert(nota + ": EXCELENTE");
 	}
 	else 
 	{
-		if (aleatorio > 3)
+		if (nota > 3)
 		{
-			alert(aleatorio + ": APROBO");
+			alert(nota + ": APROBO");
 		}
 		else
 		{	
-		alert(aleatorio + ": Vamos, la proxima se puede");
+		alert(nota + ": Vamos, la proxima se puede");
 		}
 	}
 }
