@@ -17,7 +17,7 @@ function mostrar()
 			alert ("Se encuentra al Este");
 			break;
 		case "Cordoba":
-			alert ("Se encuentra al Oeste");
+			alert ("Se encuentra al Sur");
 			break;
 	}
 }

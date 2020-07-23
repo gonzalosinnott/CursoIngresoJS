@@ -19,88 +19,265 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
 function CalcularPrecio () 
 {
     var cantidad; 
-    var lampara;
+    var marcaIngresada;
     var precio;
-    var precioFinal
+    var precioParcial
 
     cantidad = txtIdCantidad.value;
     cantidad = parseInt(cantidad);
 
-    lampara = Marca.value
+    marcaIngresada = Marca.value
 
     precio = cantidad * 35;
  
-    if (cantidad > 5)
+    switch (cantidad)
     {
-        precioFinal = precio * 0.5;
-    }
-    else
-    {
-        if (cantidad == 5 && lampara == "ArgentinaLuz")
-        {
-            precioFinal = precio * 0.6;
-        }
-        else
-        {
-            if (cantidad == 5 && lampara != "ArgentinaLuz")
+        case 5:
+            if( marcaIngresada == "ArgentinaLuz")
             {
-                precioFinal = precio * 0.7;
+                precioParcial = precio * 0.6;
             }
             else
             {
-                if (cantidad == 4 && (lampara == "ArgentinaLuz" || lampara == "FelipeLamparas"))
+                if (marcaIngresada != "ArgentinaLuz")
                 {
-                    precioFinal = precio * 0.75;
+                    precioParcial = precio * 0.7;
+                }
+            }
+            break;
+        case 4:
+            if (marcaIngresada == "ArgentinaLuz" || marcaIngresada == "FelipeLamparas")
+                {
+                    precioParcial = precio * 0.75;
                 }
                 else
                 {
-                    if (cantidad == 4 && (lampara != "ArgentinaLuz" || lampara != "FelipeLamparas"))
+                    if (marcaIngresada != "ArgentinaLuz" || marcaIngresada != "FelipeLamparas")
                     {
-                        precioFinal = precio * 0.8;
+                        precioParcial = precio * 0.8;
+                    }
+                }
+            break;
+        case 3:
+            if (marcaIngresada == "ArgentinaLuz")
+            {
+                precioParcial = precio * 0.85;
+            }
+            else
+            {
+                if (marcaIngresada == "FelipeLamparas")
+                {
+                    precioParcial = precio * 0.9;
+                }
+                else
+                {
+                    if (marcaIngresada != "ArgentinaLuz" || marcaIngresada != "FelipeLamparas")
+                    {
+                        precioParcial = precio * 0.95;
+                    }
+                }
+            }
+            break;
+        case 2:
+        case 1:
+            precioParcial = precio;
+            break;
+        default:
+            precioParcial = precio * 0.5;
+            break;
+    }
+
+    if (precioParcial > 119)
+    {
+        impuesto = precioParcial * 0.1;
+        
+        alert( "Usted debe pagar adicional de IIBB: $ " + impuesto);
+    
+        txtIdprecioDescuento.value = "$" + (precioParcial + impuesto);
+    }
+    else
+    {
+        txtIdprecioDescuento.value = "$" + precioParcial 
+    }
+}
+
+
+// VERSION IF/ELSE
+
+    if (cantidad > 5)
+    {
+        precioParcial = precio * 0.5;
+    }
+    else
+    {
+        if (cantidad == 5)
+        {
+            if( marcaIngresada == "ArgentinaLuz")
+            {
+                precioParcial = precio * 0.6;
+            }
+            else
+            {
+                if (marcaIngresada != "ArgentinaLuz")
+                {
+                    precioParcial = precio * 0.7;
+                }
+            }
+        }
+        else
+        {        
+            if (cantidad == 4)
+            {
+                if (marcaIngresada == "ArgentinaLuz" || marcaIngresada == "FelipeLamparas")
+                {
+                    precioParcial = precio * 0.75;
+                }
+                else
+                {
+                    if (marcaIngresada != "ArgentinaLuz" || marcaIngresada != "FelipeLamparas")
+                    {
+                        precioParcial = precio * 0.8;
+                    }
+                }
+            }
+            else
+            {
+                if (cantidad == 3)
+                {
+                    if (marcaIngresada == "ArgentinaLuz")
+                    {
+                        precioParcial = precio * 0.85;
                     }
                     else
                     {
-                        if (cantidad == 3 && lampara == "ArgentinaLuz")
+                        if (marcaIngresada == "FelipeLamparas")
                         {
-                            precioFinal = precio * 0.85;
+                            precioParcial = precio * 0.9;
                         }
                         else
                         {
-                            if (cantidad == 3 && lampara == "FelipeLamparas")
+                            if (marcaIngresada != "ArgentinaLuz" || marcaIngresada != "FelipeLamparas")
                             {
-                                precioFinal = precio * 0.9;
+                                precioParcial = precio * 0.95;
                             }
-                            else
-                            {
-                                if (cantidad == 3 && (lampara != "ArgentinaLuz" || lampara != "FelipeLamparas"))
-                                {
-                                    precioFinal = precio * 0.95;
-                                }
-                                else
-                                {
-                                    if (cantidad < 3)
-                                    {
-                                        precioFinal = precio;
-                                    }
-                                }
-                            }
-                        }        
-                    } 
+                        }
+                    }
+                }            
+                else
+                {
+                    if (cantidad < 3)
+                    {
+                        precioParcial = precio;
+                    }
                 }
             }
         }
     }
 
-    if (precioFinal > 119)
-    {
-        impuesto = precioFinal * 0.1;
-        
-        alert( "Usted debe pagar adicional de IIBB: $ " + impuesto);
-    
-        txtIdprecioDescuento.value = "$" + (precioFinal + impuesto);
+// VERSION SWITCH(MARCA)
+
+    switch(marcaIngresada)
+    {   
+        case "ArgentinaLuz":
+            if (cantidad > 5)
+            {
+                precioParcial = precio * 0.5;
+            }
+            else
+            {
+                if (cantidad == 5)
+                {
+                    precioParcial = precio * 0.6;
+                }
+                else
+                {
+                    if (cantidad == 4)
+                    {
+                        precioParcial = precio * 0.75;
+                    }
+                    else
+                    {
+                        if (cantidad == 3)
+                        {
+                            precioParcial = precio * 0.85;
+                        }
+                        else
+                        {
+                            if (cantidad < 3)
+                            {
+                                precioParcial = precio;  
+                            }
+                        }
+                    }
+                }
+            }
+            break;
+        case "FelipeLamparas":
+            if (cantidad > 5)
+            {
+                precioParcial = precio * 0.5;
+            }
+            else
+            {
+                if (cantidad == 5)
+                {
+                    precioParcial = precio * 0.7;
+                }
+                else
+                {
+                    if (cantidad == 4)
+                    {
+                        precioParcial = precio * 0.75;
+                    }
+                    else
+                    {
+                        if (cantidad == 3)
+                        {
+                            precioParcial = precio * 0.9;
+                        }
+                        else
+                        {
+                            if (cantidad < 3)
+                            {
+                                precioParcial = precio;  
+                            }
+                        }
+                    }
+                }
+            }
+            break;
+        default:
+            if (cantidad > 5)
+            {
+                precioParcial = precio * 0.5;
+            }
+            else
+            {
+                if (cantidad == 5)
+                {
+                    precioParcial = precio * 0.7;
+                }
+                else
+                {
+                    if (cantidad == 4)
+                    {
+                        precioParcial = precio * 0.8;
+                    }
+                    else
+                    {
+                        if (cantidad == 3)
+                        {
+                            precioParcial = precio * 0.95;
+                        }
+                        else
+                        {
+                            if (cantidad < 3)
+                            {
+                                precioParcial = precio;  
+                            }
+                        }
+                    }
+                }
+            }
+            break;
     }
-    else
-    {
-        txtIdprecioDescuento.value = "$" + precioFinal 
-    }
-}
