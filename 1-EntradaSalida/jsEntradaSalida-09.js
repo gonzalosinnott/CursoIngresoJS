@@ -13,7 +13,7 @@ function mostrarAumento()
 	var sueldo;
 	var aumento;
 
-	sueldo = txtIdSueldo.value
+	sueldo = txtIdSueldo.value;
 	parseInt(sueldo);
 	aumento = sueldo * 0.1; 
 	

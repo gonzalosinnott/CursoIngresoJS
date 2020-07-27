@@ -70,15 +70,15 @@ function mostrar()
 			break;
 		case "Otoño":
 		case "Primavera":
-			if (destinoIngresado == "Bariloche" || destinoIngresado == "Cataratas" || destinoIngresado == "Mar del plata")
+			if (destinoIngresado == "Cordoba")
 			{
-				alert ("Precio Final: $" + (precio + precio * 0.1));
+				alert ("Precio Final: $" + precio);
 			}
 			else
 			{
-				if (destinoIngresado == "Cordoba")
+				if (destinoIngresado != "Cordoba")
 				{
-					alert ("Precio Final: $" + precio );
+					alert ("Precio Final: $" + (precio + precio * 0.1));
 				}
 			}
 			break;

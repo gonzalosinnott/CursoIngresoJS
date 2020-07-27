@@ -1,5 +1,5 @@
 /*
-SINNOTT SEGURA GONZALO 
+SINNOTT SEGURA GONZALO DIVISION 1° H
 
 Para el departamento de iluminación:
 Tomando en cuenta que todas las lámparas están en oferta al mismo precio de $35 pesos final.
@@ -11,7 +11,7 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
 
  */
-
+// Hay 3 versiones porque ya lo tenia hecho
 //txtIdCantidad
 //Marca (ArgentinaLuz, FelipeLamparas, JeLuz, HazIluminacion,Osram) 
 //txtIdprecioDescuento
@@ -30,100 +30,23 @@ function CalcularPrecio ()
 
     precio = cantidad * 35;
  
-    switch (cantidad)
-    {
-        case 5:
-            if( marcaIngresada == "ArgentinaLuz")
-            {
-                precioParcial = precio * 0.6;
-            }
-            else
-            {
-                if (marcaIngresada != "ArgentinaLuz")
-                {
-                    precioParcial = precio * 0.7;
-                }
-            }
-            break;
-        case 4:
-            if (marcaIngresada == "ArgentinaLuz" || marcaIngresada == "FelipeLamparas")
-                {
-                    precioParcial = precio * 0.75;
-                }
-                else
-                {
-                    if (marcaIngresada != "ArgentinaLuz" || marcaIngresada != "FelipeLamparas")
-                    {
-                        precioParcial = precio * 0.8;
-                    }
-                }
-            break;
-        case 3:
-            if (marcaIngresada == "ArgentinaLuz")
-            {
-                precioParcial = precio * 0.85;
-            }
-            else
-            {
-                if (marcaIngresada == "FelipeLamparas")
-                {
-                    precioParcial = precio * 0.9;
-                }
-                else
-                {
-                    if (marcaIngresada != "ArgentinaLuz" || marcaIngresada != "FelipeLamparas")
-                    {
-                        precioParcial = precio * 0.95;
-                    }
-                }
-            }
-            break;
-        case 2:
-        case 1:
-            precioParcial = precio;
-            break;
-        default:
-            precioParcial = precio * 0.5;
-            break;
-    }
-
-    if (precioParcial > 119)
-    {
-        impuesto = precioParcial * 0.1;
-        
-        alert( "Usted debe pagar adicional de IIBB: $ " + impuesto);
-    
-        txtIdprecioDescuento.value = "$" + (precioParcial + impuesto);
-    }
-    else
-    {
-        txtIdprecioDescuento.value = "$" + precioParcial 
-    }
-}
-
-
-// VERSION IF/ELSE
-
     if (cantidad > 5)
     {
         precioParcial = precio * 0.5;
     }
     else
     {
-        if (cantidad == 5)
-        {
-            if( marcaIngresada == "ArgentinaLuz")
+        if (cantidad == 5 )
+        { 
+            if(marcaIngresada == "ArgentinaLuz")
             {
                 precioParcial = precio * 0.6;
             }
             else
             {
-                if (marcaIngresada != "ArgentinaLuz")
-                {
-                    precioParcial = precio * 0.7;
-                }
+                precioParcial = precio * 0.7;
             }
-        }
+        }    
         else
         {        
             if (cantidad == 4)
@@ -134,10 +57,7 @@ function CalcularPrecio ()
                 }
                 else
                 {
-                    if (marcaIngresada != "ArgentinaLuz" || marcaIngresada != "FelipeLamparas")
-                    {
-                        precioParcial = precio * 0.8;
-                    }
+                    precioParcial = precio * 0.8;
                 }
             }
             else
@@ -156,24 +76,33 @@ function CalcularPrecio ()
                         }
                         else
                         {
-                            if (marcaIngresada != "ArgentinaLuz" || marcaIngresada != "FelipeLamparas")
-                            {
-                                precioParcial = precio * 0.95;
-                            }
+                            precioParcial = precio * 0.95;
                         }
                     }
-                }            
+                }
                 else
                 {
-                    if (cantidad < 3)
-                    {
-                        precioParcial = precio;
-                    }
+                    precioParcial = precio;
                 }
             }
         }
     }
+       
+    if (precioParcial > 119)
+    {
+        impuesto = precioParcial * 0.1;
+        
+        alert( "Usted debe pagar adicional de IIBB: $ " + impuesto);
+    
+        txtIdprecioDescuento.value = "$" + (precioParcial + impuesto);
+    }
+    else
+    {
+        txtIdprecioDescuento.value = "$" + precioParcial 
+    }
+}
 
+/*
 // VERSION SWITCH(MARCA)
 
     switch(marcaIngresada)
@@ -281,3 +210,56 @@ function CalcularPrecio ()
             }
             break;
     }
+
+// VERSION SWITCH(CANTIDAD)
+switch (cantidad)
+{
+    case 5:
+        if( marcaIngresada == "ArgentinaLuz")
+        {
+            precioParcial = precio * 0.6;
+        }
+        else
+        {
+            if (marcaIngresada != "ArgentinaLuz")
+            {
+                precioParcial = precio * 0.7;
+            }
+        }
+        break;
+    case 4:
+        if (marcaIngresada == "ArgentinaLuz" || marcaIngresada == "FelipeLamparas")
+            {
+                precioParcial = precio * 0.75;
+            }
+            else
+            {
+                precioParcial = precio * 0.8;
+            }
+        break;
+    case 3:
+        if (marcaIngresada == "ArgentinaLuz")
+        {
+            precioParcial = precio * 0.85;
+        }
+        else
+        {
+            if (marcaIngresada == "FelipeLamparas")
+            {
+                precioParcial = precio * 0.9;
+            }
+            else
+            {
+                precioParcial = precio * 0.95;
+            }
+        }
+        break;
+    case 2:
+    case 1:
+        precioParcial = precio;
+        break;
+    default:
+        precioParcial = precio * 0.5;
+        break;
+}
+*/
