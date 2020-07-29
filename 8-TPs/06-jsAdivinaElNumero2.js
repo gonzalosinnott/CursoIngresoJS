@@ -31,25 +31,49 @@ function verificar()
 	//Analizo si se cumplen las condiciones y si no, agrego un intento al contador
 	if (numeroIngresado > numeroSecreto)
 	{
-	  contadorIntentos
+		alert("El numero es mas chico.")
+		txtIdIntentos.value = contadorIntentos++;
 	}
 	else
 	{
-	  if (numeroIngresado < numeroSecreto)
-	  {
-		alert("El numero es mas grande.")
-		txtIdIntentos.value = contadorIntentos++;
-	  }
-	  else
-	  {
-		if (numeroIngresado == numeroSecreto)
+		if (numeroIngresado < numeroSecreto)
 		{
-		  alert("FELICITACIONES, ACERTO EL NUMERO EN " + contadorIntentos + " INTENTOS!")
+			alert("El numero es mas grande.")
+			txtIdIntentos.value = contadorIntentos++;
+	  	}
+	  	else
+	  	{
+			if (numeroIngresado == numeroSecreto)
+			{	
+				alert("FELICITACIONES, ACERTO EL NUMERO EN " + contadorIntentos + " INTENTOS!")
+				switch(contadorIntentos)
+				{
+					case 1:
+						alert("Usted es un Psíquico.");
+						break;
+					case 2:
+						alert("Excelente percepción.")
+						break;
+					case 3:
+						alert("Esto es suerte.")
+						break;
+					case 4:
+						alert("Excelente técnica.");
+						break;
+					case 5:
+						alert("Usted está en la media.");
+						break;
+					case 6:
+					case 7:
+					case 8:
+					case 9:
+					case 10:
+						alert("Falta técnica.")
+						break;
+					default:
+						alert("Afortunado en el amor!!")
+				}
+			}
 		}
-	  }
 	}
-
-	
-	
-
 }

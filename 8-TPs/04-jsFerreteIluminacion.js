@@ -30,7 +30,74 @@ function CalcularPrecio ()
 
     precio = cantidad * 35;
  
-    if (cantidad > 5)
+// Version solo Switch
+
+    switch (cantidad)
+    {
+        case 5:
+            switch (marcaIngresada)
+            {
+                case "ArgentinaLuz":
+                    precioParcial = precio * 0.6;
+                    break;
+                default:
+                    precioParcial = precio * 0.7;
+                    break;
+            }
+            break;
+        case 4:
+            switch(marcaIngresada)
+            {
+                case "ArgentinaLuz":
+                case "FelipeLamparas":
+                    precioParcial = precio * 0.75;
+                    break;
+                default:
+                    precioParcial = precio * 0.8;
+                    break;
+            }
+            break;
+        case 3:
+            switch(marcaIngresada)
+            {
+                case "ArgentinaLuz":
+                    precioParcial = precio * 0.85;
+                    break;
+                case "FelipeLamparas":
+                    precioParcial = precio * 0.9;
+                    break;
+                default:
+                    precioParcial = precio * 0.95;
+                    break;
+            }
+            break;
+        case 2:
+        case 1:
+            precioParcial = precio;
+            break;
+        default:
+            precioParcial = precio * 0.5;
+            break;
+    }
+       
+    if (precioParcial > 119)
+    {
+        impuesto = precioParcial * 0.1;
+        
+        alert( "Usted debe pagar adicional de IIBB: $ " + impuesto);
+    
+        txtIdprecioDescuento.value = "$" + (precioParcial + impuesto);
+    }
+    else
+    {
+        txtIdprecioDescuento.value = "$" + precioParcial 
+    }
+}
+
+/*
+//version IF / ELSE
+
+if (cantidad > 5)
     {
         precioParcial = precio * 0.5;
     }
@@ -87,23 +154,8 @@ function CalcularPrecio ()
             }
         }
     }
-       
-    if (precioParcial > 119)
-    {
-        impuesto = precioParcial * 0.1;
-        
-        alert( "Usted debe pagar adicional de IIBB: $ " + impuesto);
-    
-        txtIdprecioDescuento.value = "$" + (precioParcial + impuesto);
-    }
-    else
-    {
-        txtIdprecioDescuento.value = "$" + precioParcial 
-    }
-}
 
-/*
-// VERSION SWITCH(MARCA)
+// VERSION SWITCH / IF (MARCA)
 
     switch(marcaIngresada)
     {   
@@ -211,7 +263,7 @@ function CalcularPrecio ()
             break;
     }
 
-// VERSION SWITCH(CANTIDAD)
+// VERSION SWITCH / IF (CANTIDAD)
 switch (cantidad)
 {
     case 5:

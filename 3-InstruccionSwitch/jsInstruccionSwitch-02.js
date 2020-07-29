@@ -25,10 +25,7 @@ function mostrar()
 		case "Agosto":
 			alert("Abrigate que hace frio.");
 			break;
-		case "Septiembre":
-		case "Octubre":
-		case "Noviembre":
-		case "Diciembre":
+		default:
 			alert("Ya pasamos el frio, ahora calor!!!.");
 			break;
 	}

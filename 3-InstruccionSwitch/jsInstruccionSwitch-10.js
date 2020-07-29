@@ -18,41 +18,48 @@ function mostrar()
 {
 	var estacionIngresada = txtIdEstacion.value;
 	var destinoIngresado = txtIdDestino.value;
+	var condicionViaje;
 
 	switch (estacionIngresada)
 	{
 		case "Invierno":
-			if (destinoIngresado == "Bariloche")
+			switch (destinoIngresado)
 			{
-				alert("Se viaja.");
-			}
-			else
-			{
-				alert("No se viaja.");
+				case "Bariloche":
+				condicionViaje = "Se viaja.";
+					break;
+				default:
+					condicionViaje = "No se viaja.";
+					break;
 			}
 			break;
 		case "Verano":
-			if (destinoIngresado == "Mar del plata" || destinoIngresado == "Cataratas")
+			switch (destinoIngresado)
 			{
-				alert("Se viaja.");
+				case "Mar del plata":
+				case "Cataratas":
+					condicionViaje = "Se viaja.";
+					break;
+				default:
+					condicionViaje = "No se viaja.";
+					break;
 			}
-			else
+			break;
+		case "Primavera":
+			switch (destinoIngresado)
 			{
-				alert("No se viaja.");
+				case "Bariloche":
+					condicionViaje = "No se viaja.";
+					break;
+				default:
+					condicionViaje = "Se viaja.";
+					break;
 			}
 			break;
 		case "Otoño":
-			alert("Se viaja.")
-			break;
-		case "Primavera":
-			if (destinoIngresado != "Bariloche")
-			{
-				alert("Se viaja.");
-			}
-			else
-			{
-				alert("No se viaja.");
-			}
+			condicionViaje = "Se viaja."
 			break;
 	}
+
+	alert (condicionViaje);
 }

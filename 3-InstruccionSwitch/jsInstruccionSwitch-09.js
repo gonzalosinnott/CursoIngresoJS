@@ -24,63 +24,57 @@ function mostrar()
 {
 	var estacionIngresada = txtIdEstacion.value;
 	var destinoIngresado = txtIdDestino.value;
+	var porcentaje;
+	var precioFinal;
+
 	var precio = 15000;
 
 	switch(estacionIngresada)
 	{
 		case "Invierno":
-			if (destinoIngresado == "Bariloche")
+			switch (destinoIngresado)
 			{
-				alert ("Precio Final: $" + (precio + precio * 0.2));
-			}
-			else
-			{
-				if (destinoIngresado == "Cataratas" || destinoIngresado == "Cordoba")
-				{
-					alert ("Precio Final: $" + (precio -precio * 0.1));
-				}
-				else
-				{
-					if (destinoIngresado == "Mar del plata")
-					{
-						alert ("Precio Final: $" + (precio -precio * 0.2));
-					}
-				}
+				case "Bariloche":
+					porcentaje = 0.2;
+					break;
+				case "Cataratas":
+				case "Cordoba":
+					porcentaje = -0.1;
+					break;
+				default:
+					porcentaje = -0.2;
+					break;
 			}
 			break;		
 		case "Verano":
-			if (destinoIngresado == "Bariloche")
+			switch (destinoIngresado)
 			{
-				alert ("Precio Final: $" + (precio - precio * 0.2));
-			}
-			else
-			{
-				if (destinoIngresado == "Cataratas" || destinoIngresado == "Cordoba")
-				{
-					alert ("Precio Final: $" + (precio + precio * 0.1));
-				}
-				else
-				{
-					if (destinoIngresado == "Mar del plata")
-					{
-						alert ("Precio Final: $" + (precio + precio * 0.2));
-					}
-				}
+				case "Bariloche":
+					porcentaje = -0.2;
+					break;
+				case "Cataratas":
+				case "Cordoba":
+					porcentaje = 0.1;
+					break;
+				default:
+					porcentaje = 0.2;
+					break;
 			}
 			break;
-		case "Otoño":
-		case "Primavera":
-			if (destinoIngresado == "Cordoba")
+		default:
+			switch (destinoIngresado)
 			{
-				alert ("Precio Final: $" + precio);
-			}
-			else
-			{
-				if (destinoIngresado != "Cordoba")
-				{
-					alert ("Precio Final: $" + (precio + precio * 0.1));
-				}
+				case "Cordoba":
+					porcentaje = 0;
+					break;
+				default:
+					porcentaje = 0.1;
+					break;
 			}
 			break;
 	}
+	
+	precioFinal = precio + (precio * porcentaje);
+	
+	alert("El precio final es de: $ " + precioFinal)
 }

@@ -26,30 +26,31 @@ function comenzar()
 
 function verificar()
 {
-  //Establezco variables
-  var numeroIngresado;
-  numeroIngresado = txtIdNumero.value;
-  numeroIngresado = parseInt(numeroIngresado);
 
-  //Analizo si se cumplen las condiciones y si no, agrego un intento al contador
-  if (numeroIngresado > numeroSecreto)
-  {
-    alert("El numero es mas chico.")
-    txtIdIntentos.value = contadorIntentos++ ;
-  }
-  else
-  {
-    if (numeroIngresado < numeroSecreto)
-    {
-      alert("El numero es mas grande.")
-      txtIdIntentos.value = contadorIntentos++;
-    }
-    else
-    {
-      if (numeroIngresado == numeroSecreto)
-      {
-        alert("FELICITACIONES, ACERTO EL NUMERO EN " + contadorIntentos + " INTENTOS!")
-      }
-    }
-  }
+  	//Establezco variables
+  	var numeroIngresado;
+  	numeroIngresado = txtIdNumero.value;
+  	numeroIngresado = parseInt(numeroIngresado);
+
+  	//Analizo si se cumplen las condiciones y si no, agrego un intento al contador
+  	if (numeroIngresado > numeroSecreto)
+  	{
+    	alert("El numero es mas chico.")
+    	txtIdIntentos.value = contadorIntentos++;
+  	}
+  	else
+	{	
+    	if (numeroIngresado < numeroSecreto)
+    	{	
+      		alert("El numero es mas grande.")
+      		txtIdIntentos.value = contadorIntentos++;
+    	}
+    	else
+    	{
+      		if (numeroIngresado == numeroSecreto)
+      		{
+        	alert("FELICITACIONES, ACERTO EL NUMERO EN " + contadorIntentos + " INTENTOS!")
+      		}
+    	}
+  	}
 }

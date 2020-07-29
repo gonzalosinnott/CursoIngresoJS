@@ -8,7 +8,7 @@ function mostrar()
 	switch (destinoIngresado)
 		{
 			case "Bariloche":
-			case "Cordoba":
+			case "Ushuaia":
 				alert ("FRIO");
 				break;
 			case "Mar del plata":

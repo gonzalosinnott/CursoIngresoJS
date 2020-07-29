@@ -5,25 +5,108 @@ El jugador seleccionará una imagen correspondiente
 a su opción  y le informaremos si ganó, empató o perdió.
 */
 var eleccionMaquina;
+// 1 == piedra
+// 2 == papel
+// 3 == tijera
 
-function comenzar()
-{
-	
-
-
-}//FIN DE LA FUNCIÓN
 function piedra()
 {
-	
+    eleccionMaquina = Math.round(Math.random()*(3 - 1) + 1);
 
-}//FIN DE LA FUNCIÓN
+    if (eleccionMaquina == 1)
+	{
+		alert("La maquina eligio PIEDRA");
+	}
+	else
+	{
+		if (eleccionMaquina == 2)
+		{
+			alert("La maquina eligio PAPEL");
+		}
+		else
+		{
+			alert("La maquina eligio TIJERA");
+		}
+    }
+    
+    switch(eleccionMaquina)
+    {
+        case 1:
+            alert("Empate.");
+            break;
+        case 2:
+            alert("Perdiste.");
+            break;
+        case 3:
+            alert("Ganaste!");
+            break;
+    }
+}
+
 function papel()
 {
+    eleccionMaquina = Math.round(Math.random()*(3 - 1) + 1);
 
+    if (eleccionMaquina == 1)
+	{
+		alert("La maquina eligio PIEDRA");
+	}
+	else
+	{
+		if (eleccionMaquina == 2)
+		{
+			alert("La maquina eligio PAPEL");
+		}
+		else
+		{
+			alert("La maquina eligio TIJERA");
+		}
+    }
+    
+    switch(eleccionMaquina)
+    {
+        case 1:
+            alert("Ganaste!");
+            break;
+        case 2:
+            alert("Empate.");
+            break;
+        case 3:
+            alert("Perdiste.");
+            break;
+    }
+}
 
-}//FIN DE LA FUNCIÓN
 function tijera()
 {
-	
+    eleccionMaquina = Math.round(Math.random()*(3 - 1) + 1);
 
-}//FIN DE LA FUNCIÓN
+    if (eleccionMaquina == 1)
+	{
+		alert("La maquina eligio PIEDRA");
+	}
+	else
+	{
+		if (eleccionMaquina == 2)
+		{
+			alert("La maquina eligio PAPEL");
+		}
+		else
+		{
+			alert("La maquina eligio TIJERA");
+		}
+    }
+    
+    switch(eleccionMaquina)
+    {
+        case 1:
+            alert("Perdiste");
+            break;
+        case 2:
+            alert("Ganaste!.");
+            break;
+        case 3:
+            alert("Empate.");
+            break;
+    }
+}

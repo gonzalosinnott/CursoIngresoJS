@@ -13,15 +13,6 @@ function mostrar()
 		
 	switch (horaDelDia)
 	{
-		case 0:
-		case 1:
-		case 2:
-		case 3:
-		case 4:
-		case 5:
-		case 6:
-			alert("Es de noche.");
-			break;
 		case 7:
 		case 8:
 		case 9:
@@ -43,7 +34,13 @@ function mostrar()
 		case 21:
 		case 22:
 		case 23:
-		case 24:
+		case 0:
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
 			alert("Es de noche.");
 			break;
 		default:
@@ -58,16 +55,25 @@ if (horaDelDia > 6 && horaDelDia < 12)
 	{
 		alert("Es de mañana.");
 	}
-	else if (horaDelDia > 11 && horaDelDia < 20)
+	else 
 	{
-		alert("Es de tarde.");
-	}
-	else if ((horaDelDia > 19 && horaDelDia <25) || (horaDelDia > 19 && horaDelDia <25))
-	{
-			alert("Es de noche.");
-	}
-	else if (horaDelDia > 24 && horaDelDia < 0)
-	{
-		alert("la hora no existe.");
+		if (horaDelDia > 11 && horaDelDia < 20)
+		{
+			alert("Es de tarde.");
+		}
+		else
+		{
+			if ((horaDelDia > 19 && horaDelDia <25) || (horaDelDia > 19 && horaDelDia <25))
+			{
+				alert("Es de noche.");
+			}
+			else
+			{
+				if (horaDelDia > 24 && horaDelDia < 0)
+				{
+				alert("la hora no existe.");
+				}
+			}
+		}
 	}
 */
