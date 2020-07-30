@@ -26,9 +26,9 @@ function mostrar()
 	var promedioNegativos = 0;
 	var diferenciaPositivosNegativos = 0;
 
-	respuesta="si";
+	respuesta=true;
 	
-	while (respuesta == "si")
+	while (respuesta == true)
 	{
 		numeroIngresado = prompt("Ingrese un Numero");
 		numeroIngresado = parseInt(numeroIngresado);
@@ -56,7 +56,7 @@ function mostrar()
 			}
 		}
 
-		respuesta = prompt("¿Desea continuar?(SI/NO).");
+		respuesta = confirm("¿Desea continuar?");
 	}
 	
 

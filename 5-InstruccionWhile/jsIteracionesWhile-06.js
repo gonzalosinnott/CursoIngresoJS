@@ -5,22 +5,24 @@ Al presionar el botón pedir 5 números e informar la suma acumulada y el promed
 
 function mostrar()
 {
-	var i;
+	var contador;
 	var suma;
 	var numeroIngresado;
-	var suma
+	var promedio;
 
-	i = 0;
+	contador = 0;
 	suma = 0;
 
-	while (i < 5)
+	while (contador < 5)
 	{
 		numeroIngresado = prompt("Ingrese un Numero");
 		numeroIngresado = parseInt(numeroIngresado);
-		i++ ;
+		contador++ ;
 		suma = suma + numeroIngresado;
 	}
 
+	promedio = suma / contador;
+	
 	txtIdSuma.value = suma;
-	txtIdPromedio.value= suma / i;
+	txtIdPromedio.value= promedio;
 }

@@ -10,15 +10,15 @@ function mostrar()
 	
 	i=0;
 	suma=0;
-	respuesta = "si";
+	respuesta = true;
 	
-	while (respuesta == "si")
+	while (respuesta == true)
 	{
 		numeroIngresado = prompt("Ingrese un Numero");
 		numeroIngresado = parseInt(numeroIngresado);
 		i++ ;
 		suma = suma + numeroIngresado;
-		respuesta = prompt("¿Desea continuar?(SI/NO).");
+		respuesta = confirm("¿Desea continuar?");
 	}
 	
 	txtIdSuma.value = suma;

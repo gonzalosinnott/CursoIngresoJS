@@ -11,10 +11,10 @@ function mostrar()
 	
 	sumaPositivos=0;
 	multiplicacionNegativos=1;
-	respuesta="si";
+	respuesta=true;
 
 
-	while (respuesta == "si")
+	while (respuesta == true)
 	{
 		numeroIngresado = prompt("Ingrese un Numero");
 		numeroIngresado = parseInt(numeroIngresado);
@@ -26,7 +26,7 @@ function mostrar()
 		{
 			multiplicacionNegativos = multiplicacionNegativos * numeroIngresado;
 		}
-		respuesta = prompt("¿Desea continuar?(SI/NO).");
+		respuesta = confirm("¿Desea continuar?");
 	}
 	
 	txtIdSuma.value=sumaPositivos;

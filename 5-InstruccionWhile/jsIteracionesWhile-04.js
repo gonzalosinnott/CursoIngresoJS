@@ -5,7 +5,8 @@ function mostrar()
 {
 	var numeroIngresado;
 	numeroIngresado = prompt("Ingrese un número entre 0 y 10.");
-
+	numeroIngresado = parseInt(numeroIngresado);
+	
 	while (numeroIngresado < 0 || numeroIngresado > 10)
 	{
 		numeroIngresado = prompt("Numero fuera de rango. Intente nuevamente.");

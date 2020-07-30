@@ -10,11 +10,11 @@ function mostrar()
 	var respuesta;
 	
 	numeroMaximo = 0
-	numeroMinimo = 0
+	numeroMinimo
 		
-	respuesta='si';
+	respuesta = true;
 	
-	while(respuesta =="si")
+	while(respuesta == true)
 	{
 		numeroIngresado = prompt("Ingrese un Numero");
 		numeroIngresado = parseInt(numeroIngresado);
@@ -27,7 +27,7 @@ function mostrar()
 		{
 			numeroMinimo = numeroIngresado
 		}
-		respuesta = prompt("¿Desea continuar?(SI/NO).");
+		respuesta = confirm("¿Desea continuar?");
 	}
 
 	txtIdMaximo.value=numeroMaximo;

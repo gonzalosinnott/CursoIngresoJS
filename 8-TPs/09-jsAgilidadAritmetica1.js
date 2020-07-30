@@ -7,7 +7,6 @@ y una de las cuatro operaciones básicas (suma, resta,
 se debe informar si el resultado es el correcto o no.
 */
 
-var respuesta;
 var numeroUno;
 var numeroDos;
 var operadores;
@@ -23,12 +22,12 @@ function comenzar()
     numeroDos = Math.round(Math.random()*(10 - 1) + 1);
     
     //Asignar los numeros al formulario
-    txtIdPrimerNumero.value = numeroUno
-    txtIdSegundoNumero.value = numeroDos
+    txtIdPrimerNumero.value = numeroUno;
+    txtIdSegundoNumero.value = numeroDos;
     
     //Obtener operador aritmetico Random a partir de un array
-    operadores = ["+" , "-", "*", "/"]
-    operadorAleatorio = operadores[Math.floor(Math.random() * operadores.length)]
+    operadores = ["+" , "-", "*", "/"];
+    operadorAleatorio = operadores[Math.floor(Math.random() * operadores.length)];
     
     //Asignar operador al formulario
     txtIdOperador.value = operadorAleatorio;
