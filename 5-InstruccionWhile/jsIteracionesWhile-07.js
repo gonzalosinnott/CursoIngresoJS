@@ -24,4 +24,4 @@ function mostrar()
 	txtIdSuma.value = suma;
 	txtIdPromedio.value = suma / i;
 
-}//FIN DE LA FUNCIÓN
+}

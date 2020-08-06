@@ -3,10 +3,15 @@
 el botón 'mostrar'
 */
 
+//txtIdNombre
+
 function mostrar()
 {
-	var nombre
-	nombre = prompt("Ingrese su nombre.");
-	txtIdNombre.value = nombre;
+	var dato;
+
+	dato = prompt("¿Cual es tu nombre?");
+	   
+	txtIdNombre.value = dato;
 }
+	
 

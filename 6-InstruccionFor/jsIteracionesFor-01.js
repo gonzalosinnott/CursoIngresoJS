@@ -5,8 +5,8 @@ Al presionar el botón mostrar 10 repeticiones
 
 function mostrar()
 {
-	for (i = 1 ; i < 11 ; i++)
+	for (contador = 1 ; contador < 11 ; contador++)
 	{
-		document.write(i + "<br>")
+		document.write(contador + "<br>");
 	}
 }

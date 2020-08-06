@@ -4,7 +4,6 @@ ID.value , transformarlos a enteros
 Mostrar el resulto por medio de
 "ALERT" ej.: "la suma es 750"*/
 
-//id:
 //txtIdNumeroUno
 //txtIdNumeroDos
 
@@ -19,9 +18,9 @@ function sumar()
 
 	numeroUno = parseInt(numeroUno);
 	numeroDos = parseInt(numeroDos);
-	
+
 	suma = numeroUno + numeroDos;
 
-	alert("La suma es " + suma);
+	alert("La suma es " + suma);	
 }
 

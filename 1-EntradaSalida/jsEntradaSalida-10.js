@@ -12,12 +12,15 @@ function mostrarAumento()
 {
 	var importe;
 	var descuento;
+	var importeConDescuento
 
 	importe = txtIdImporte.value;
-	parseInt(importe);
+	descuento = 0.75;
 
-	descuento = importe * 0.25; 
-	 
-	alert("Descuento del " + descuento + " %")
-	txtIdResultado.value = importe - descuento; 
+	importe = parseFloat(importe);
+
+	importeConDescuento = importe * descuento;
+	importeConDescuento = importeConDescuento.toFixed(2);
+
+	txtIdResultado.value = importeConDescuento;
 }

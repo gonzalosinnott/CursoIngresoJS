@@ -21,8 +21,8 @@ function sumar()
 	numeroDos = parseInt(numeroDos);
 
 	suma = numeroUno + numeroDos;
-
-	alert("La suma es " + suma);	
+	
+	alert("La suma es " + suma);
 }
 
 function restar()
@@ -38,12 +38,12 @@ function restar()
 	numeroDos = parseInt(numeroDos);
 
 	resta = numeroUno - numeroDos;
-
-	alert("La resta es " + resta);		
+	
+	alert("La resta es " + resta);			
 }
 
 function multiplicar()
-{ 
+{
 	var numeroUno;
 	var numeroDos;
 	var producto;
@@ -55,24 +55,23 @@ function multiplicar()
 	numeroDos = parseInt(numeroDos);
 
 	producto = numeroUno * numeroDos;
-
-	alert("El producto es " + producto);		
+	
+	alert("El producto es " + producto);			
 }
-
+			
 function dividir()
 {
 	var numeroUno;
-	var numeroDos
+	var numeroDos;
 	var cociente;
 
 	numeroUno = txtIdNumeroUno.value;
 	numeroDos = txtIdNumeroDos.value;
 
-	numeroUno = parseFloat(numeroUno);
-	numeroDos = parseFloat(numeroDos);
+	numeroUno = parseInt(numeroUno);
+	numeroDos = parseInt(numeroDos);
 
 	cociente = numeroUno / numeroDos;
-
-	alert("El cociente es " + cociente);		
+	
+	alert("El cociente es " + cociente);			
 }
-

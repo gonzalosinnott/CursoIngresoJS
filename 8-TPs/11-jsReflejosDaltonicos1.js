@@ -6,7 +6,9 @@ mostrara el texto de un color entre los 6 posibles
 */
 var colores
 var colorSecreto;
-var tiempoInicio;
+var tiempo;
+var contador;
+var segundos = 0;
 
 
 function comenzar()
@@ -18,18 +20,22 @@ function comenzar()
         
     txtIdColorElegido.value = colorSecreto;
 
-    start = performance.now();
-    Responder();
-    end = performance.now();
+    //Iniciar contador al cargar la pagina
+    contador = setInterval(tiempo,1000);
 
-    tiempoInicio = performance.now();
+    function tiempo()
+    {
+        segundos++
+    }
 
 }
 
 function Responder(colorParametro)
 {
+    //Validar respuesta y parar contador
     if (colorParametro == colorSecreto)
     {
-        alert("Acertaste ! \n Te llevo " + tiempoInicio  + " ARREGLAR EN SEGUNDOS!!!!!!.");
+        clearInterval(contador)
+        alert("Acertaste ! \n Te llevo " + segundos  + " segundos responder!.");
     }    
 }

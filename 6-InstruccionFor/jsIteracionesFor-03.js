@@ -4,13 +4,21 @@ que quiero repetir el mensaje "Hola UTN FRA"
 
 function mostrar()
 {
+	var mensaje;
+	var repeticiones;
+	var contador;
 
-	var repetciones = prompt("ingrese el número de repeticiones");
-	alert("ok");
 
-	for (i = 10 ; i > 0 ; i--)
+	mensaje = "Hola UTN FRA"
+
+	do{		
+	repeticiones = prompt("ingrese el número de repeticiones");
+	repeticiones = parseInt(repeticiones);
+	}while(isNaN(numeroIngresado) || repeticiones > 0)
+
+	for (contador = 0 ; contador < repeticiones ; contador++)
 	{
-		document.write(i + "<br>")
+		document.write(mensaje + "<br>");
 	}
 	
-}//FIN DE LA FUNCIÓN
+}

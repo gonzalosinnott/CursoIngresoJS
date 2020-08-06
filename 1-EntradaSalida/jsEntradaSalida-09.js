@@ -12,11 +12,15 @@ function mostrarAumento()
 {
 	var sueldo;
 	var aumento;
+	var sueldoConAumento;
 
 	sueldo = txtIdSueldo.value;
-	parseInt(sueldo);
-	aumento = sueldo * 0.1; 
-	
-	alert("Aumento del " + aumento + " %");
-    txtIdResultado.value = sueldo + aumento; 
+	aumento = 1.1;
+
+	sueldo = parseFloat(sueldo);
+
+	sueldoConAumento = sueldo * aumento;
+	sueldoConAumento = sueldoConAumento.toFixed(2)
+
+	txtIdResultado.value = sueldoConAumento;
 }

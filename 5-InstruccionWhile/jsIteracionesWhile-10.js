@@ -22,16 +22,18 @@ function mostrar()
 	var cantidadNegativos = 0;
 	var cantidadCeros = 0;
 	var cantidadNumerosPares = 0;
-	var promedioPositivos = 0;
-	var promedioNegativos = 0;
-	var diferenciaPositivosNegativos = 0;
+	var promedioPositivos;
+	var promedioNegativos;
+	var diferenciaPositivosNegativos;
 
 	respuesta=true;
 	
 	while (respuesta == true)
 	{
-		numeroIngresado = prompt("Ingrese un Numero");
-		numeroIngresado = parseInt(numeroIngresado);
+		do{
+			numeroIngresado = prompt("Ingrese un Numero");
+			numeroIngresado = parseInt(numeroIngresado)
+		}while(isNaN(numeroIngresado));
 		
 		if (numeroIngresado % 2 == 0)
 		{
@@ -58,23 +60,20 @@ function mostrar()
 
 		respuesta = confirm("¿Desea continuar?");
 	}
-	
 
-	document.write("La suma de positivos es: "+ sumaPositivos);
-	document.write("<br>");
-	document.write("La suma de negativos es: "+ sumaNegativos);
-	document.write("<br>");
-	document.write("La cantidad de positivos es: "+ cantidadPositivos);
-	document.write("<br>");
-	document.write("La cantidad de negativos es: "+ cantidadNegativos);
-	document.write("<br>");
-	document.write("La cantidad de ceros es: "+ cantidadCeros);
-	document.write("<br>");
-	document.write("La cantidad de numeros pares es: "+ cantidadNumerosPares);
-	document.write("<br>");
-	document.write("El promedio de positivos es: "+ promedioPositivos);
-	document.write("<br>");
-	document.write("El promedio de negativos es: "+ promedioNegativos);
-	document.write("<br>");
-	document.write("La diferencia entre positivos y negativos es: " + diferenciaPositivosNegativos);
+	promedioPositivos = sumaPositivos / cantidadPositivos;
+
+	promedioNegativos = sumaNegativos / cantidadNegativos;
+
+	diferenciaPositivosNegativos = sumaPositivos - sumaNegativos;	
+
+	document.write("La suma de positivos es: "+ sumaPositivos + "<br>");
+	document.write("La suma de negativos es: "+ sumaNegativos + "<br>");
+	document.write("La cantidad de positivos es: "+ cantidadPositivos + "<br>");
+	document.write("La cantidad de negativos es: "+ cantidadNegativos + "<br>");
+	document.write("La cantidad de ceros es: "+ cantidadCeros + "<br>");
+	document.write("La cantidad de numeros pares es: "+ cantidadNumerosPares + "<br>");
+	document.write("El promedio de positivos es: "+ promedioPositivos + "<br>");
+	document.write("El promedio de negativos es: "+ promedioNegativos + "<br>");
+	document.write("La diferencia entre positivos y negativos es: " + diferenciaPositivosNegativos + "<br>");
 }
