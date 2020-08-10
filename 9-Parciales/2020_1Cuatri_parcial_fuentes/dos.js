@@ -19,14 +19,14 @@ function mostrar()
   var precioPorBolsa;
   var cantidadTotal = 0;
   var precioFinal;
-  var contadorArena = 0;
-  var contadorCal = 0;
-  var contadorCemento = 0;
+  var acumuladorArena = 0;
+  var acumuladorCal = 0;
+  var acumuladorCemento = 0;
   var precioMasCaro;
   var productoMasCaro;
-  var contadorMasCantidad = 0;
 
   respuesta = true;
+  precioFinal = 0;
 
   while(respuesta == true)
   {
@@ -49,55 +49,46 @@ function mostrar()
       precioPorBolsa = parseInt(precioPorBolsa);
     }while(precioPorBolsa < 1);
 
+
+    if(precioPorBolsa > precioMasCaro || precioMasCaro == null)
+    {
+      precioMasCaro = precioPorBolsa;
+      productoMasCaro = producto
+    }
+
     switch(producto)
     {
       case "arena":
-        contadorArena = contadorArena + cantidad;
-        if(precioPorBolsa > precioMasCaro || precioMasCaro == null)
-				{
-          precioMasCaro = precioPorBolsa;
-          productoMasCaro = producto
-				}
+        acumuladorArena = acumuladorArena + cantidad;
         break;
       case "cal":
-        contadorCal = contadorCal + cantidad;
-        if(precioPorBolsa > precioMasCaro || precioMasCaro == null)
-				{
-          precioMasCaro = precioPorBolsa;
-          productoMasCaro = producto
-				}
+        acumuladorCal = acumuladorCal + cantidad;
         break;
       case "cemento":
-        contadorCemento = contadorCemento + cantidad;
-        if(precioPorBolsa > precioMasCaro || precioMasCaro == null)
-				{
-          precioMasCaro = precioPorBolsa;
-          productoMasCaro = producto
-				}
+        acumuladorCemento = acumuladorCemento + cantidad;
         break;
     }
 
-    precioFinal = precioFinal + (cantidad * precioPorBolsa);
-
-
     respuesta = confirm("¿Desea continuar?");
   }
-
+  
   //a) El importe total a pagar , bruto sin descuento 
   //b) el importe total a pagar con descuento(solo si corresponde)
   //Si compro más de 10 bolsas en total tenes 15% de descuento sobre el total a pagar.
   //Si compro más de 30 bolsas en total tenes 25% de descuento sobre el total a pagar.
+  precioFinal = precioFinal + (cantidad * precioPorBolsa);
+  
   if(cantidadTotal > 30)
   {
-    precioConDescuento = precioFinal * 0.75
-    document.write("Importe final con descuento por comprar mas de 30 bolsas: $ " + precioConDescuento + "<br>");
+    precioFinal = precioFinal * 0.75
+    document.write("Importe final con descuento por comprar mas de 30 bolsas: $ " + precioFinal + "<br>");
   }
   else
   {
-    if(cantidadTotal > 10 && cantidadTotal < 31)
+    if(cantidadTotal > 10)
     {
-      precioConDescuento = precioFinal * 0.85
-      document.write("Importe final con descuento por comprar mas de 10 bolas: " + precioConDescuento + "<br>");
+      precioFinal = precioFinal * 0.85
+      document.write("Importe final con descuento por comprar mas de 10 bolas: " + precioFinal + "<br>");
     }
     else
     {
@@ -106,23 +97,21 @@ function mostrar()
   }
 
   //d) Informar el tipo con mas cantidad de bolsas.
-  if(contadorArena > contadorCal && contadorArena > contadorCemento)
+  if(contadorArena > contadorCal && contadorArena > acumuladorCemento)
 	{
     productoMasCantidad = "Arena";
     contadorMasCantidad = contadorArena;
 	}
 	else
 	{
-		if(contadorCal > contadorArena && contadorCal > contadorCemento)
+		if(contadorCal > contadorArena && contadorCal >= acumuladorCemento)
 		{
       productoMasCantidad = "Cal";
       contadorMasCantidad = contadorCal;
 		}
 		else
 		{
-			if(contadorCemento > contadorArena && contadorCemento > contadorCal)
-			{
-        productoMasCantidad = "Cemento";
+			  productoMasCantidad = "Cemento";
         contadorMasCantidad = contadorCemento;
 			}
 		}

@@ -14,21 +14,22 @@ o si “se pasó…”  del número secreto.
 
 var numeroSecreto; 
 var contadorIntentos;
-contadorIntentos = 1
+contadorIntentos = 1;
 
 alert("Ingrese un numero del 1 al 100");
 
 function comenzar()
 {
 	//Genero el número RANDOM entre 1 y 100
-  numeroSecreto = Math.round(Math.random()*(100 - 1) + 1);
+  	numeroSecreto = Math.round(Math.random()*(100 - 1) + 1);
 }
 
 function verificar()
 {
 
   	//Establezco variables
-  	var numeroIngresado;
+	  var numeroIngresado;
+	  
   	numeroIngresado = txtIdNumero.value;
   	numeroIngresado = parseInt(numeroIngresado);
 
@@ -47,9 +48,9 @@ function verificar()
     	}
     	else
     	{
-      		if (numeroIngresado == numeroSecreto)
-      		{
-        	alert("FELICITACIONES, ACERTO EL NUMERO EN " + contadorIntentos + " INTENTOS!")
+			if (numeroIngresado == numeroSecreto)
+			{
+			alert("FELICITACIONES, ACERTO EL NUMERO EN " + contadorIntentos + " INTENTOS!")
       		}
     	}
   	}
